@@ -7,11 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OledSharp\OledSharp.csproj" />
+    <PackageReference Include="Iot.Device.Bindings" Version="4.0.1" />
+    <PackageReference Include="System.Device.Gpio" Version="4.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Device.I2c" Version="3.1.0" />
+    <ProjectReference Include="..\OledSharp\OledSharp.csproj" />
   </ItemGroup>
 
 </Project>

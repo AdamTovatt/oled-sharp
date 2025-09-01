@@ -1,13 +1,13 @@
 ﻿namespace OledSharp
 {
-    internal interface IOledDisplay : IDisposable
+    public interface IOledDisplay : IDisposable
     {
         int Width { get; }
         int Height { get; }
-        void SetPixel(int x, int y, bool isOn);
-        bool GetPixel(int x, int y);
-        void Clear();
-        void Update();
-        void ClearAndUpdate();
+        void Initialize();
+        void SetBufferPixel(int x, int y, bool isOn);
+        bool GetBufferPixel(int x, int y);
+        void ClearBuffer();
+        void PushBuffer();
     }
 }
