@@ -40,10 +40,42 @@ namespace OledSharp
         }
 
         /// <summary>
+        /// Draws text at the specified position
+        /// </summary>
+        /// <param name="text">Text to draw</param>
+        /// <param name="x">X coordinate (left edge)</param>
+        /// <param name="y">Y coordinate (baseline position)</param>
+        public void DrawText(string text, int x, int y)
+        {
+            if (string.IsNullOrEmpty(text))
+                return;
+
+            int currentX = x;
+            int baselineY = y - _font.BaselineOffset;
+
+            foreach (char c in text)
+            {
+                if (c == '\n')
+                {
+                    currentX = x;
+                    baselineY += _font.LineHeight + LineSpacing;
+                    continue;
+                }
+
+                CharacterData characterData = _font.GetCharacter(c);
+                // Calculate Y position for this character (bottom-left origin)
+                int characterY = baselineY - characterData.Height + characterData.VerticalOffset;
+
+                DrawCharacter(currentX, characterY, c);
+                currentX += characterData.Width + CharacterSpacing;
+            }
+        }
+
+        /// <summary>
         /// Draws a single character at the specified position
         /// </summary>
         /// <param name="x">X coordinate for top-left of character</param>
-        /// <param name="y">Y coordinate for baseline of character</param>
+        /// <param name="y">Y coordinate for top-left of character</param>
         /// <param name="character">Character to draw</param>
         /// <param name="isOn">True to draw character pixels on, false to draw them off (erase)</param>
         /// <returns>The actual width of the drawn character in pixels</returns>
@@ -81,7 +113,7 @@ namespace OledSharp
         /// Draws a string of text starting at the specified position
         /// </summary>
         /// <param name="x">X coordinate for start of text</param>
-        /// <param name="y">Y coordinate for start of text</param>
+        /// <param name="y">Y coordinate for baseline of text</param>
         /// <param name="text">Text to draw</param>
         /// <param name="isOn">True to draw text pixels on, false to erase text area</param>
         /// <returns>The width in pixels of the rendered text</returns>
@@ -101,7 +133,9 @@ namespace OledSharp
                 if (currentX + characterData.Width > _display.Width)
                     break; // Stop drawing if we run out of horizontal space
 
-                if (y + characterData.Height > _display.Height)
+                // Check if character would fit vertically (accounting for vertical offset)
+                int maxCharacterHeight = characterData.Height + characterData.VerticalOffset;
+                if (y + maxCharacterHeight > _display.Height)
                     break; // Stop drawing if we run out of vertical space
 
                 int actualWidth = DrawCharacter(currentX, y, character, isOn);
@@ -121,7 +155,7 @@ namespace OledSharp
         /// Draws multi-line text with automatic line wrapping
         /// </summary>
         /// <param name="x">X coordinate for start of text</param>
-        /// <param name="y">Y coordinate for start of text</param>
+        /// <param name="y">Y coordinate for baseline of first line</param>
         /// <param name="text">Text to draw (can contain \n for manual line breaks)</param>
         /// <param name="isOn">True to draw text pixels on, false to erase text area</param>
         /// <returns>Total height in pixels of the rendered text</returns>
@@ -133,17 +167,18 @@ namespace OledSharp
             string[] lines = text.Split('\n');
             int currentY = y;
             int totalHeight = 0;
+            int lineHeight = _font.LineHeight;
 
             foreach (string line in lines)
             {
                 // Check if this line would fit vertically
-                if (currentY + _font.CharacterHeight > _display.Height)
+                if (currentY + lineHeight > _display.Height)
                     break;
 
                 DrawString(x, currentY, line, isOn);
 
-                currentY += _font.CharacterHeight + LineSpacing;
-                totalHeight += _font.CharacterHeight + LineSpacing;
+                currentY += lineHeight + LineSpacing;
+                totalHeight += lineHeight + LineSpacing;
             }
 
             // Remove the last line spacing from total height
@@ -157,7 +192,7 @@ namespace OledSharp
         /// Draws text with automatic word wrapping within specified width
         /// </summary>
         /// <param name="x">X coordinate for start of text</param>
-        /// <param name="y">Y coordinate for start of text</param>
+        /// <param name="y">Y coordinate for baseline of first line</param>
         /// <param name="text">Text to draw</param>
         /// <param name="maxWidth">Maximum width for text wrapping</param>
         /// <param name="isOn">True to draw text pixels on, false to erase text area</param>
@@ -170,7 +205,8 @@ namespace OledSharp
             string[] words = text.Split(' ');
             int currentX = x;
             int currentY = y;
-            int totalHeight = _font.CharacterHeight;
+            int lineHeight = _font.LineHeight;
+            int totalHeight = lineHeight;
 
             foreach (string word in words)
             {
@@ -181,11 +217,11 @@ namespace OledSharp
                 {
                     // Move to next line
                     currentX = x;
-                    currentY += _font.CharacterHeight + LineSpacing;
-                    totalHeight += _font.CharacterHeight + LineSpacing;
+                    currentY += lineHeight + LineSpacing;
+                    totalHeight += lineHeight + LineSpacing;
 
                     // Check if we've run out of vertical space
-                    if (currentY + _font.CharacterHeight > _display.Height)
+                    if (currentY + lineHeight > _display.Height)
                         break;
                 }
 
@@ -239,7 +275,8 @@ namespace OledSharp
                 return 0;
 
             string[] lines = text.Split('\n');
-            int height = lines.Length * _font.CharacterHeight;
+            int lineHeight = _font.LineHeight;
+            int height = lines.Length * lineHeight;
             if (lines.Length > 1)
                 height += (lines.Length - 1) * LineSpacing;
 

@@ -1,6 +1,4 @@
 #nullable enable
-using System;
-
 namespace OledSharp
 {
     /// <summary>
@@ -14,23 +12,23 @@ namespace OledSharp
         /// Each byte represents one pixel (0 = off, 1 = on)
         /// </summary>
         public readonly byte[] Bitmap;
-        
+
         /// <summary>
         /// Width of the character in pixels
         /// </summary>
         public readonly int Width;
-        
+
         /// <summary>
         /// Height of the character in pixels
         /// </summary>
         public readonly int Height;
-        
+
         /// <summary>
         /// Vertical offset in pixels from the baseline (positive = down, negative = up)
         /// Default is 0 (no offset)
         /// </summary>
         public readonly int VerticalOffset;
-        
+
         /// <summary>
         /// Creates a new CharacterData instance
         /// </summary>
@@ -44,14 +42,14 @@ namespace OledSharp
             Width = Math.Max(1, width); // Ensure width is at least 1
             Height = Math.Max(1, height); // Ensure height is at least 1
             VerticalOffset = verticalOffset;
-            
+
             // Validate bitmap size matches dimensions
             if (bitmap.Length != width * height)
             {
                 throw new ArgumentException($"Bitmap size ({bitmap.Length}) must equal width × height ({width * height})", nameof(bitmap));
             }
         }
-        
+
         /// <summary>
         /// Gets a pixel value at the specified position
         /// </summary>
@@ -62,8 +60,8 @@ namespace OledSharp
         {
             if (x < 0 || x >= Width || y < 0 || y >= Height)
                 return false;
-                
-            int index = y * Width + x;
+
+            int index = (y * Width) + x;
             return Bitmap[index] == 1;
         }
     }

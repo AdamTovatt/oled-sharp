@@ -65,7 +65,7 @@ namespace OledSharp.SSD1306
             // Calculate which bit within that page (0 = top pixel, 7 = bottom pixel)  
             int bitPosition = y % 8;
             // Calculate buffer index
-            int bufferIndex = page * _width + x;
+            int bufferIndex = (page * _width) + x;
 
             // Set or clear the specific bit
             if (isOn)
@@ -74,7 +74,7 @@ namespace OledSharp.SSD1306
             }
             else
             {
-                _displayBuffer[bufferIndex] &= (byte)(~(1 << bitPosition));
+                _displayBuffer[bufferIndex] &= (byte)~(1 << bitPosition);
             }
         }
 
@@ -92,7 +92,7 @@ namespace OledSharp.SSD1306
 
             int page = y / 8;
             int bitPosition = y % 8;
-            int bufferIndex = page * _width + x;
+            int bufferIndex = (page * _width) + x;
 
             return (_displayBuffer[bufferIndex] & (1 << bitPosition)) != 0;
         }
