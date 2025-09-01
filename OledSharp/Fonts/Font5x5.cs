@@ -462,13 +462,13 @@ namespace OledSharp.Fonts
             { 'g', new CharacterData(LetterG, 4, CharacterHeight) },
             { 'h', new CharacterData(LetterH, 4, CharacterHeight) },
             { 'i', new CharacterData(LetterI, 3, CharacterHeight) },
-            { 'j', new CharacterData(LetterJ, 4, CharacterHeight, 1) }, // Offset down by 1 pixel for descender
+            { 'j', new CharacterData(LetterJ, 4, CharacterHeight) },
             { 'k', new CharacterData(LetterK, 4, CharacterHeight) },
             { 'l', new CharacterData(LetterL, 4, CharacterHeight) },
             { 'm', new CharacterData(LetterM, 5, CharacterHeight) },
             { 'n', new CharacterData(LetterN, 4, CharacterHeight) },
             { 'o', new CharacterData(LetterO, 4, CharacterHeight) },
-            { 'p', new CharacterData(LetterP, 4, CharacterHeight, 1) }, // Offset down by 1 pixel for descender
+            { 'p', new CharacterData(LetterP, 4, CharacterHeight) },
             { 'q', new CharacterData(LetterQ, 5, CharacterHeight, 1) }, // Offset down by 1 pixel for descender
             { 'r', new CharacterData(LetterR, 4, CharacterHeight) },
             { 's', new CharacterData(LetterS, 4, CharacterHeight) },
@@ -490,13 +490,13 @@ namespace OledSharp.Fonts
             { 'G', new CharacterData(LetterG, 4, CharacterHeight) },
             { 'H', new CharacterData(LetterH, 4, CharacterHeight) },
             { 'I', new CharacterData(LetterI, 3, CharacterHeight) },
-            { 'J', new CharacterData(LetterJ, 4, CharacterHeight, 1) }, // Offset down by 1 pixel for descender
+            { 'J', new CharacterData(LetterJ, 4, CharacterHeight) },
             { 'K', new CharacterData(LetterK, 4, CharacterHeight) },
             { 'L', new CharacterData(LetterL, 4, CharacterHeight) },
             { 'M', new CharacterData(LetterM, 5, CharacterHeight) },
             { 'N', new CharacterData(LetterN, 4, CharacterHeight) },
             { 'O', new CharacterData(LetterO, 4, CharacterHeight) },
-            { 'P', new CharacterData(LetterP, 4, CharacterHeight, 1) }, // Offset down by 1 pixel for descender
+            { 'P', new CharacterData(LetterP, 4, CharacterHeight) },
             { 'Q', new CharacterData(LetterQ, 5, CharacterHeight, 1) }, // Offset down by 1 pixel for descender
             { 'R', new CharacterData(LetterR, 4, CharacterHeight) },
             { 'S', new CharacterData(LetterS, 4, CharacterHeight) },
