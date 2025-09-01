@@ -279,9 +279,9 @@ namespace OledSharp.Fonts
             0, 1, 1, 1, 0,
             1, 0, 0, 0, 1,
             1, 0, 0, 0, 1,
+            1, 0, 0, 0, 1,
             0, 1, 1, 1, 0,
-            0, 0, 0, 0, 1,
-            0, 0, 0, 1, 0,
+            0, 0, 0, 1, 1,
         };
 
         private static readonly byte[] LetterR =
@@ -387,22 +387,18 @@ namespace OledSharp.Fonts
 
         private static readonly byte[] Period =
         {
+            0,
+            0,
+            0,
+            0,
             1,
-            0,
-            0,
-            0,
-            0,
         };
 
-        // Comma with descender (6 pixels tall)
+        // Comma with descender (2 pixels tall)
         private static readonly byte[] Comma =
         {
-            0, 0,
-            0, 0,
-            0, 0,
             0, 1,
             1, 0,
-            0, 0,
         };
 
         private static readonly byte[] Colon =
@@ -410,8 +406,8 @@ namespace OledSharp.Fonts
             1,
             0,
             0,
-            1,
             0,
+            1,
         };
 
         // Semicolon with descender (6 pixels tall)
@@ -420,9 +416,9 @@ namespace OledSharp.Fonts
             0, 1,
             0, 0,
             0, 0,
+            0, 0,
             0, 1,
             1, 0,
-            0, 0,
         };
 
         private static readonly byte[] ExclamationMark =
@@ -436,8 +432,8 @@ namespace OledSharp.Fonts
 
         private static readonly byte[] Apostrophe =
         {
-            1, 1,
-            0, 0,
+            0, 1,
+            1, 0,
             0, 0,
             0, 0,
             0, 0,
@@ -475,7 +471,7 @@ namespace OledSharp.Fonts
             { 'n', new CharacterData(LetterN, 4, StandardCharacterHeight) },
             { 'o', new CharacterData(LetterO, 4, StandardCharacterHeight) },
             { 'p', new CharacterData(LetterP, 4, StandardCharacterHeight) },
-            { 'q', new CharacterData(LetterQ, 5, 6, 1) }, // 6 pixels tall with 1 pixel descender
+            { 'q', new CharacterData(LetterQ, 5, 6, 0) }, // 6 pixels tall with 1 pixel descender
             { 'r', new CharacterData(LetterR, 4, StandardCharacterHeight) },
             { 's', new CharacterData(LetterS, 4, StandardCharacterHeight) },
             { 't', new CharacterData(LetterT, 3, StandardCharacterHeight) },
@@ -503,7 +499,7 @@ namespace OledSharp.Fonts
             { 'N', new CharacterData(LetterN, 4, StandardCharacterHeight) },
             { 'O', new CharacterData(LetterO, 4, StandardCharacterHeight) },
             { 'P', new CharacterData(LetterP, 4, StandardCharacterHeight) },
-            { 'Q', new CharacterData(LetterQ, 5, 6, 1) }, // 6 pixels tall with 1 pixel descender
+            { 'Q', new CharacterData(LetterQ, 5, 6, 0) }, // 6 pixels tall with 1 pixel descender
             { 'R', new CharacterData(LetterR, 4, StandardCharacterHeight) },
             { 'S', new CharacterData(LetterS, 4, StandardCharacterHeight) },
             { 'T', new CharacterData(LetterT, 3, StandardCharacterHeight) },
@@ -517,7 +513,7 @@ namespace OledSharp.Fonts
             // Special characters and punctuation
             { ' ', new CharacterData(WhiteSpace, 3, StandardCharacterHeight) },
             { '.', new CharacterData(Period, 1, StandardCharacterHeight) },
-            { ',', new CharacterData(Comma, 2, 6, 1) }, // 6 pixels tall with 1 pixel descender
+            { ',', new CharacterData(Comma, 2, 2, 1) }, // 2 pixels tall, positioned 1 pixel below baseline
             { ':', new CharacterData(Colon, 1, StandardCharacterHeight) },
             { ';', new CharacterData(Semicolon, 2, 6, 1) }, // 6 pixels tall with 1 pixel descender
             { '!', new CharacterData(ExclamationMark, 1, StandardCharacterHeight) },

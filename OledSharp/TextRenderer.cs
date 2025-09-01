@@ -64,7 +64,7 @@ namespace OledSharp
 
                 CharacterData characterData = _font.GetCharacter(c);
                 // Calculate Y position for this character (bottom-left origin)
-                int characterY = baselineY - characterData.Height + characterData.VerticalOffset;
+                int characterY = baselineY + (_font.LineHeight - characterData.Height) + characterData.VerticalOffset;
 
                 DrawCharacter(currentX, characterY, c);
                 currentX += characterData.Width + CharacterSpacing;
