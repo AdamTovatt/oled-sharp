@@ -426,23 +426,7 @@ namespace OledSharp.Fonts
             1,
         };
 
-        private static readonly byte[] LetterI_Narrow = 
-        {
-            1,
-            0,
-            1,
-            1,
-            1,
-        };
 
-        private static readonly byte[] LetterL_Narrow = 
-        {
-            1, 0, 0,
-            1, 0, 0,
-            1, 0, 0,
-            1, 0, 0,
-            1, 1, 1,
-        };
 
         private static readonly byte[] Apostrophe = 
         {
@@ -477,10 +461,10 @@ namespace OledSharp.Fonts
             { 'f', new CharacterData(LetterF, 4, CharacterHeight) },
             { 'g', new CharacterData(LetterG, 4, CharacterHeight) },
             { 'h', new CharacterData(LetterH, 4, CharacterHeight) },
-            { 'i', new CharacterData(LetterI_Narrow, 1, CharacterHeight) },
+            { 'i', new CharacterData(LetterI, 3, CharacterHeight) },
             { 'j', new CharacterData(LetterJ, 4, CharacterHeight, 1) }, // Offset down by 1 pixel for descender
             { 'k', new CharacterData(LetterK, 4, CharacterHeight) },
-            { 'l', new CharacterData(LetterL_Narrow, 3, CharacterHeight) },
+            { 'l', new CharacterData(LetterL, 4, CharacterHeight) },
             { 'm', new CharacterData(LetterM, 5, CharacterHeight) },
             { 'n', new CharacterData(LetterN, 4, CharacterHeight) },
             { 'o', new CharacterData(LetterO, 4, CharacterHeight) },
@@ -505,10 +489,10 @@ namespace OledSharp.Fonts
             { 'F', new CharacterData(LetterF, 4, CharacterHeight) },
             { 'G', new CharacterData(LetterG, 4, CharacterHeight) },
             { 'H', new CharacterData(LetterH, 4, CharacterHeight) },
-            { 'I', new CharacterData(LetterI_Narrow, 1, CharacterHeight) },
+            { 'I', new CharacterData(LetterI, 3, CharacterHeight) },
             { 'J', new CharacterData(LetterJ, 4, CharacterHeight, 1) }, // Offset down by 1 pixel for descender
             { 'K', new CharacterData(LetterK, 4, CharacterHeight) },
-            { 'L', new CharacterData(LetterL_Narrow, 3, CharacterHeight) },
+            { 'L', new CharacterData(LetterL, 4, CharacterHeight) },
             { 'M', new CharacterData(LetterM, 5, CharacterHeight) },
             { 'N', new CharacterData(LetterN, 4, CharacterHeight) },
             { 'O', new CharacterData(LetterO, 4, CharacterHeight) },
@@ -533,7 +517,7 @@ namespace OledSharp.Fonts
             { '!', new CharacterData(ExclamationMark, 1, CharacterHeight) },
             { '\'', new CharacterData(Apostrophe, 2, CharacterHeight) },
             { '?', new CharacterData(LetterQuestion, 5, CharacterHeight) },
-            { '-', new CharacterData(LetterLine, 3, CharacterHeight) },
+            { '-', new CharacterData(LetterLine, 4, CharacterHeight) },
         };
 
         /// <summary>
