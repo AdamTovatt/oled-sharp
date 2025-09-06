@@ -387,10 +387,6 @@ namespace OledSharp.Fonts
 
         private static readonly byte[] Period =
         {
-            0,
-            0,
-            0,
-            0,
             1,
         };
 
@@ -512,10 +508,10 @@ namespace OledSharp.Fonts
 
             // Special characters and punctuation
             { ' ', new CharacterData(WhiteSpace, 3, StandardCharacterHeight) },
-            { '.', new CharacterData(Period, 1, StandardCharacterHeight) },
-            { ',', new CharacterData(Comma, 2, 2, 1) }, // 2 pixels tall, positioned 1 pixel below baseline
+            { '.', new CharacterData(Period, 1, 1, 4) },
+            { ',', new CharacterData(Comma, 2, 2, 4) }, // 2 pixels tall, positioned 1 pixel below baseline
             { ':', new CharacterData(Colon, 1, StandardCharacterHeight) },
-            { ';', new CharacterData(Semicolon, 2, 6, 1) }, // 6 pixels tall with 1 pixel descender
+            { ';', new CharacterData(Semicolon, 2, 6, 0) }, // 6 pixels tall with 1 pixel descender
             { '!', new CharacterData(ExclamationMark, 1, StandardCharacterHeight) },
             { '\'', new CharacterData(Apostrophe, 2, StandardCharacterHeight) },
             { '?', new CharacterData(LetterQuestion, 5, StandardCharacterHeight) },
