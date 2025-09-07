@@ -8,6 +8,7 @@ A .NET 8.0 library for drawing text and graphics on small displays. This library
 
 ![Font5x5 Example](../Images/font5x5.png)
 
+> [!TIP]
 > The picture above shows an example of what the included font looks like on a 128x64 px display (the image is scaled up 4x for better visibility).
 
 ## Overview
@@ -57,7 +58,7 @@ The main display abstraction interface that all display implementations must imp
 
 Handles text rendering on displays. Uses an instance of `IOledDisplay` to draw pixels for a font. Uses an instance of `IFont` to get the `CharacterData` for each character to draw in a text.
 
-> [INFO]
+> [!IMPORTANT]
 > By default, if no `IFont` is provided, the `TextRenderer` uses the `Font5x5`.
 
 **Properties:**

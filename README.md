@@ -8,6 +8,7 @@ A .NET 8.0 library for drawing text and graphics on small displays. This library
 
 ![Font5x5 Example](Images/font5x5.png)
 
+> [!TIP]
 > The picture above shows an example of what the included font looks like on a 128x64 px display (the image is scaled up 4x for better visibility).
 
 ## Overview
@@ -16,11 +17,14 @@ This repository contains OledSharp which is a collection of libraries for drawin
 
 ## Libraries
 
-> [IMPORTANT]
+> [!IMPORTANT]
 > Please refer to the specific library `README.md` files for documentation, this is just the overview file for the repository in general.
 
 ### Core Library
 - **[OledSharp](OledSharp/README.md)** - Base library with interfaces, text rendering, and default font
+
+> [!WARNING]
+> The documentation file for the `OledSharp` base library is not the same as this file! You should read the read documentation file for that library if you want to know how to use it.
 
 ### Hardware Implementations
 - **[OledSharp.SSD1306](OledSharp.SSD1306/README.md)** - SSD1306 OLED display implementation via I2C
