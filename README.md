@@ -64,7 +64,7 @@ This repository contains OledSharp which is a collection of libraries for drawin
        // Push changes to display
        display.PushBuffer();
    }
-```
+   ```
 
 > [!TIP]
 > See the specific library documentation for detailed usage examples.
