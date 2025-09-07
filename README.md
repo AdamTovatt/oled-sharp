@@ -66,8 +66,10 @@ This repository contains OledSharp which is a collection of libraries for drawin
    }
    ```
 
-> [!TIP]
+
+> [!IMPORTANT]
 > See the specific library documentation for detailed usage examples.
+> Both [OledSharp.SSD1306](OledSharp.SSD1306/README.md) and [OledSharp](OledSharp/README.md) are good to read here.
 
 ## License
 
