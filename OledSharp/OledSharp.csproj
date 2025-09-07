@@ -10,7 +10,7 @@
     <Description>Base library for drawing on small dislpays</Description>
     <Copyright>MIT</Copyright>
     <PackageProjectUrl>https://github.com/AdamTovatt/oled-sharp</PackageProjectUrl>
-    <PackageIcon>icon_128.png</PackageIcon>
+    <PackageIcon>Images/icon_128.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/AdamTovatt/oled-sharp</RepositoryUrl>
     <PackageTags>oled;display;text;rendering;font;bitmap;small-display;embedded;iot</PackageTags>
@@ -19,7 +19,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\Icon\icon_128.png">
+    <None Include="..\Images\icon_128.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
