@@ -16,6 +16,7 @@
     <PackageTags>oled;display;png;testing;debugging;visualization;embedded;iot</PackageTags>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>

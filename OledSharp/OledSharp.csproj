@@ -16,6 +16,7 @@
     <PackageTags>oled;display;text;rendering;font;bitmap;small-display;embedded;iot</PackageTags>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
