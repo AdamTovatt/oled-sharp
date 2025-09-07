@@ -202,7 +202,47 @@ namespace OledSharp
             if (string.IsNullOrEmpty(text) || maxWidth <= 0)
                 return 0;
 
-            string[] words = text.Split(' ');
+            // First split by line breaks to handle explicit \n characters
+            string[] lines = text.Split('\n');
+            int currentY = y;
+            int lineHeight = _font.LineHeight;
+            int totalHeight = 0;
+
+            foreach (string line in lines)
+            {
+                // Check if we've run out of vertical space
+                if (currentY + lineHeight > _display.Height)
+                    break;
+
+                // Process each line for word wrapping
+                int lineWrapHeight = DrawWrappedLine(x, currentY, line, maxWidth, isOn);
+                
+                currentY += lineWrapHeight + LineSpacing;
+                totalHeight += lineWrapHeight + LineSpacing;
+            }
+
+            // Remove the last line spacing from total height
+            if (totalHeight > 0)
+                totalHeight -= LineSpacing;
+
+            return totalHeight;
+        }
+
+        /// <summary>
+        /// Draws a single line of text with word wrapping within specified width
+        /// </summary>
+        /// <param name="x">X coordinate for start of text</param>
+        /// <param name="y">Y coordinate for baseline of first line</param>
+        /// <param name="line">Single line of text to draw (should not contain \n)</param>
+        /// <param name="maxWidth">Maximum width for text wrapping</param>
+        /// <param name="isOn">True to draw text pixels on, false to erase text area</param>
+        /// <returns>Total height in pixels of the rendered line(s)</returns>
+        private int DrawWrappedLine(int x, int y, string line, int maxWidth, bool isOn)
+        {
+            if (string.IsNullOrEmpty(line))
+                return _font.LineHeight;
+
+            string[] words = line.Split(' ');
             int currentX = x;
             int currentY = y;
             int lineHeight = _font.LineHeight;
