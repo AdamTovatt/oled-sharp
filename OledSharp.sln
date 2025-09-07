@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OledSharp.Png.Tests", "Oled
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OledSharp.Tests", "OledSharp.Tests\OledSharp.Tests.csproj", "{8A96AE72-B322-4050-90C4-2BCB6578F1EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OledSharp.VirtualScreenDemo", "OledSharp.VirtualScreenDemo\OledSharp.VirtualScreenDemo.csproj", "{1A9FF4B7-16F6-46C6-A156-63F1D90C05E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8A96AE72-B322-4050-90C4-2BCB6578F1EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A96AE72-B322-4050-90C4-2BCB6578F1EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A96AE72-B322-4050-90C4-2BCB6578F1EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A9FF4B7-16F6-46C6-A156-63F1D90C05E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A9FF4B7-16F6-46C6-A156-63F1D90C05E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A9FF4B7-16F6-46C6-A156-63F1D90C05E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A9FF4B7-16F6-46C6-A156-63F1D90C05E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

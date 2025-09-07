@@ -120,11 +120,11 @@ namespace OledSharp.Fonts
 
         private static readonly byte[] Unsupported =
         {
-            0, 1, 0, 1,
             1, 1, 1, 1,
-            0, 1, 0, 1,
             1, 1, 1, 1,
-            0, 1, 0, 1,
+            1, 1, 1, 1,
+            1, 1, 1, 1,
+            1, 1, 1, 1,
         };
 
         private static readonly CharacterData DefaultUnsupportedCharacterData = new CharacterData(Unsupported, 4, StandardCharacterHeight);
@@ -365,22 +365,86 @@ namespace OledSharp.Fonts
             1, 1, 1, 1, 1,
         };
 
+        private static readonly byte[] LetterÅ =
+        {
+            0, 1, 1, 0,
+            0, 0, 0, 0,
+            0, 1, 1, 0,
+            1, 0, 0, 1,
+            1, 1, 1, 1,
+            1, 0, 0, 1,
+        };
+
+        private static readonly byte[] LetterÄ =
+        {
+            1, 0, 0, 1,
+            0, 0, 0, 0,
+            0, 1, 1, 0,
+            1, 0, 0, 1,
+            1, 1, 1, 1,
+            1, 0, 0, 1,
+        };
+
+        private static readonly byte[] LetterÖ =
+        {
+            1, 0, 0, 1,
+            0, 0, 0, 0,
+            0, 1, 1, 0,
+            1, 0, 0, 1,
+            1, 0, 0, 1,
+            0, 1, 1, 0,
+        };
+
         private static readonly byte[] LetterQuestion =
         {
-            0, 1, 1, 1, 0,
-            0, 0, 0, 0, 1,
-            0, 0, 1, 1, 0,
-            0, 0, 0, 0, 0,
-            0, 0, 1, 0, 0,
+            1, 1, 1, 0,
+            0, 0, 0, 1,
+            0, 1, 1, 0,
+            0, 0, 0, 0,
+            0, 1, 0, 0,
         };
 
         private static readonly byte[] LetterLine =
         {
-            0, 0, 0, 0,
-            0, 0, 0, 0,
-            0, 1, 1, 1,
-            0, 0, 0, 0,
-            0, 0, 0, 0,
+            1, 1, 1,
+        };
+
+        private static readonly byte[] Percentage =
+        {
+            0, 1, 0, 0, 1,
+            0, 0, 0, 1, 0,
+            0, 0, 1, 0, 0,
+            0, 1, 0, 0, 0,
+            1, 0, 0, 1, 0,
+        };
+
+        private static readonly byte[] Quote =
+        {
+            1, 0, 1,
+            1, 0, 1,
+        };
+
+        private static readonly byte[] Underscore =
+        {
+            1, 1, 1,
+        };
+
+        private static readonly byte[] Slash =
+        {
+            0, 0, 0, 0, 1,
+            0, 0, 0, 1, 0,
+            0, 0, 1, 0, 0,
+            0, 1, 0, 0, 0,
+            1, 0, 0, 0, 0,
+        };
+
+        private static readonly byte[] BackSlash =
+        {
+            1, 0, 0, 0, 0,
+            0, 1, 0, 0, 0,
+            0, 0, 1, 0, 0,
+            0, 0, 0, 1, 0,
+            0, 0, 0, 0, 1,
         };
 
         // ============ NARROW PUNCTUATION CHARACTERS ============
@@ -402,7 +466,6 @@ namespace OledSharp.Fonts
             1,
             0,
             0,
-            0,
             1,
         };
 
@@ -410,7 +473,6 @@ namespace OledSharp.Fonts
         private static readonly byte[] Semicolon =
         {
             0, 1,
-            0, 0,
             0, 0,
             0, 0,
             0, 1,
@@ -428,11 +490,112 @@ namespace OledSharp.Fonts
 
         private static readonly byte[] Apostrophe =
         {
+            1,
+            1,
+        };
+
+        private static readonly byte[] OpenParenthesis =
+        {
             0, 1,
             1, 0,
-            0, 0,
-            0, 0,
-            0, 0,
+            1, 0,
+            1, 0,
+            0, 1,
+        };
+
+        private static readonly byte[] CloseParenthesis =
+        {
+            1, 0,
+            0, 1,
+            0, 1,
+            0, 1,
+            1, 0,
+        };
+
+        private static readonly byte[] Asterisk =
+        {
+            0, 1, 0,
+            1, 1, 1,
+            0, 1, 0,
+            1, 0, 1,
+            0, 0, 0,
+        };
+
+        private static readonly byte[] OpenSquareBracket =
+        {
+            1, 1,
+            1, 0,
+            1, 0,
+            1, 0,
+            1, 1,
+        };
+
+        private static readonly byte[] CloseSquareBracket =
+        {
+            1, 1,
+            0, 1,
+            0, 1,
+            0, 1,
+            1, 1,
+        };
+
+        private static readonly byte[] OpenCurlyBracket =
+        {
+            0, 1, 1,
+            0, 1, 0,
+            1, 0, 0,
+            0, 1, 0,
+            0, 1, 1,
+        };
+
+        private static readonly byte[] CloseCurlyBracket =
+        {
+            1, 1, 0,
+            0, 1, 0,
+            0, 0, 1,
+            0, 1, 0,
+            1, 1, 0,
+        };
+
+        private static readonly byte[] Plus =
+        {
+            0, 1, 0,
+            1, 1, 1,
+            0, 1, 0,
+        };
+
+        private static readonly byte[] EqualsSign =
+        {
+            1, 1, 1,
+            0, 0, 0,
+            1, 1, 1,
+        };
+
+        private static readonly byte[] LessThan =
+        {
+            0, 0, 1,
+            0, 1, 0,
+            1, 0, 0,
+            0, 1, 0,
+            0, 0, 1,
+        };
+
+        private static readonly byte[] GreaterThan =
+        {
+            1, 0, 0,
+            0, 1, 0,
+            0, 0, 1,
+            0, 1, 0,
+            1, 0, 0,
+        };
+
+        private static readonly byte[] Pipe =
+        {
+            1,
+            1,
+            1,
+            1,
+            1,
         };
 
         // Character lookup dictionary with width and height information
@@ -506,16 +669,40 @@ namespace OledSharp.Fonts
             { 'Y', new CharacterData(LetterY, 3, StandardCharacterHeight) },
             { 'Z', new CharacterData(LetterZ, 5, StandardCharacterHeight) },
 
+            { 'å', new CharacterData(LetterÅ, 4, 6, -1) }, // 6 pixels tall with 1 pixel above standard height
+            { 'ä', new CharacterData(LetterÄ, 4, 6, -1) }, // 6 pixels tall with 1 pixel above standard height
+            { 'ö', new CharacterData(LetterÖ, 4, 6, -1) }, // 6 pixels tall with 1 pixel above standard height
+            { 'Å', new CharacterData(LetterÅ, 4, 6, -1) }, // 6 pixels tall with 1 pixel above standard height
+            { 'Ä', new CharacterData(LetterÄ, 4, 6, -1) }, // 6 pixels tall with 1 pixel above standard height
+            { 'Ö', new CharacterData(LetterÖ, 4, 6, -1) }, // 6 pixels tall with 1 pixel above standard height
+
             // Special characters and punctuation
             { ' ', new CharacterData(WhiteSpace, 3, StandardCharacterHeight) },
             { '.', new CharacterData(Period, 1, 1, 4) },
             { ',', new CharacterData(Comma, 2, 2, 4) }, // 2 pixels tall, positioned 1 pixel below baseline
-            { ':', new CharacterData(Colon, 1, StandardCharacterHeight) },
-            { ';', new CharacterData(Semicolon, 2, 6, 0) }, // 6 pixels tall with 1 pixel descender
+            { ':', new CharacterData(Colon, 1, 4, 1) },
+            { ';', new CharacterData(Semicolon, 2, 5, 1) },
             { '!', new CharacterData(ExclamationMark, 1, StandardCharacterHeight) },
-            { '\'', new CharacterData(Apostrophe, 2, StandardCharacterHeight) },
-            { '?', new CharacterData(LetterQuestion, 5, StandardCharacterHeight) },
-            { '-', new CharacterData(LetterLine, 4, StandardCharacterHeight) },
+            { '\'', new CharacterData(Apostrophe, 1, 2) },
+            { '?', new CharacterData(LetterQuestion, 4, StandardCharacterHeight) },
+            { '-', new CharacterData(LetterLine, 3, 1, 2) },
+            { '%', new CharacterData(Percentage, 5, StandardCharacterHeight) },
+            { '"', new CharacterData(Quote, 3, 2, 0) },
+            { '_', new CharacterData(Underscore, 3, 1, 5) },
+            { '/', new CharacterData(Slash, 5, StandardCharacterHeight) },
+            { '\\', new CharacterData(BackSlash, 5, StandardCharacterHeight) },
+            { '(', new CharacterData(OpenParenthesis, 2, StandardCharacterHeight) },
+            { ')', new CharacterData(CloseParenthesis, 2, StandardCharacterHeight) },
+            { '*', new CharacterData(Asterisk, 3, StandardCharacterHeight) },
+            { '[', new CharacterData(OpenSquareBracket, 2, StandardCharacterHeight) },
+            { ']', new CharacterData(CloseSquareBracket, 2, StandardCharacterHeight) },
+            { '{', new CharacterData(OpenCurlyBracket, 3, StandardCharacterHeight) },
+            { '}', new CharacterData(CloseCurlyBracket, 3, StandardCharacterHeight) },
+            { '+', new CharacterData(Plus, 3, 3, 1) },
+            { '=', new CharacterData(EqualsSign, 3, 3, 1) },
+            { '<', new CharacterData(LessThan, 3, StandardCharacterHeight) },
+            { '>', new CharacterData(GreaterThan, 3, StandardCharacterHeight) },
+            { '|', new CharacterData(Pipe, 1, StandardCharacterHeight) },
         };
 
         /// <summary>
