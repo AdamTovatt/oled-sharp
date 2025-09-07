@@ -10,7 +10,7 @@
     <Description>SSD1306 OLED display implementation for OledSharp</Description>
     <Copyright>MIT</Copyright>
     <PackageProjectUrl>https://github.com/AdamTovatt/oled-sharp</PackageProjectUrl>
-    <PackageIcon>Images/icon_128.png</PackageIcon>
+    <PackageIcon>icon_128.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/AdamTovatt/oled-sharp</RepositoryUrl>
     <PackageTags>oled;ssd1306;display;hardware;i2c;embedded;iot</PackageTags>
