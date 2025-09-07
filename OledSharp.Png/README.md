@@ -4,7 +4,7 @@
 
 A .NET 8.0 implementation of `IOledDisplay` that outputs display content to PNG image files. This library is perfect for testing, debugging, and visualizing what would be displayed on an OLED screen without needing physical hardware.
 
-> [INFO]
+> [!IMPORTANT]
 > This is a software implementation for testing and visualization. For the main library documentation and general usage, see [OledSharp](../OledSharp/README.md).
 
 ## Overview

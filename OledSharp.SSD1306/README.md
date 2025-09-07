@@ -4,7 +4,7 @@
 
 A .NET 8.0 implementation of `IOledDisplay` for SSD1306 OLED displays. This library provides direct hardware control for 128x64 pixel SSD1306 OLED displays via I2C communication.
 
-> [INFO]
+> [!IMPORTANT]
 > This is a hardware-specific implementation. For the main library documentation and general usage, see [OledSharp](../OledSharp/README.md).
 
 ## Overview

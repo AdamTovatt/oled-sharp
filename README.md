@@ -8,7 +8,6 @@ A .NET 8.0 library for drawing text and graphics on small displays. This library
 
 ![Font5x5 Example](Images/font5x5.png)
 
-> [!TIP]
 > The picture above shows an example of what the included font looks like on a 128x64 px display (the image is scaled up 4x for better visibility).
 
 ## Overview
@@ -67,7 +66,8 @@ This repository contains OledSharp which is a collection of libraries for drawin
    }
 ```
 
-4. See the specific library documentation for detailed usage examples.
+> [!TIP]
+> See the specific library documentation for detailed usage examples.
 
 ## License
 
