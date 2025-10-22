@@ -23,7 +23,7 @@ This repository contains OledSharp which is a collection of libraries for drawin
 - **[OledSharp](OledSharp/README.md)** - Base library with interfaces, text rendering, and default font
 
 > [!WARNING]
-> The documentation file for the `OledSharp` base library is not the same as this file! You should read the read documentation file for that library if you want to know how to use it.
+> The documentation file for the `OledSharp` base library is not the same as this file! You should read the [documentation file](OledSharp/README.md) for that library if you want to know how to use it.
 
 ### Hardware Implementations
 - **[OledSharp.SSD1306](OledSharp.SSD1306/README.md)** - SSD1306 OLED display implementation via I2C
