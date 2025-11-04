@@ -1,6 +1,8 @@
 # OledSharp
 
 [![NuGet version](https://img.shields.io/nuget/v/OledSharp.svg)](https://www.nuget.org/packages/OledSharp/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/OledSharp.svg)](https://www.nuget.org/packages/OledSharp/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 ![OledSharp Header](Images/header.png)
 
